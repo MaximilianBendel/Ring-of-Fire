@@ -1,0 +1,23 @@
+.Player {
+    display: flex;
+    align-items: center;
+    background-color: #c5c801;
+    border-top-left-radius: 48px;
+    border-bottom-left-radius: 48px;
+    height: 120px;
+    width: 190px;
+    cursor: pointer;
+    transition:  width 0.3s ease-in-out; // Füge width zur Transition hinzu
+    &:hover {
+        width: 250px; // Erhöhe die Breite bei Hover
+    }
+
+    img {
+        width: 96px;;
+    }
+    span {
+        font-size: 18px;
+        margin-left: 24px;
+    }
+}
+

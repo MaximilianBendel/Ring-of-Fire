@@ -1,0 +1,19 @@
+
+    <app-player style="top: 100px;" class="playerPosition"></app-player>
+
+<div class="field">
+    <div class="cardstack">
+        @for (card of [0,1,2,3]; track card; let i = $index;) {
+            <img [ngStyle]="{'right.px': i * 5}" src="/assets/img/cards/card_cover.png" alt="">
+        }
+        <img (click)="pickCard()" class="topCard" [ngStyle]="{'right.px': 20}" src="/assets/img/cards/card_cover.png" alt="">
+    
+        @for (card of game.playedCard; track card; let i = $index) {
+            <img [ngStyle]="{'left.px': cardStyles[i].left, 'top.px': cardStyles[i].top, 'transform': 'rotate('+ cardStyles[i].rotate + 'deg)'}" src="/assets/img/cards/{{ card }}.png" alt="">
+        }
+
+        @if (pickCardAnimation) {
+            <img (click)="pickCard()" class="pickCard" [ngStyle]="{'right.px': 20}" src="/assets/img/cards/{{ currentCard }}.png" alt="">
+        }
+    </div>
+</div>
