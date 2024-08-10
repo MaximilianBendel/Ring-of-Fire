@@ -1,10 +1,10 @@
 .Player {
     display: flex;
     align-items: center;
-    background-color: #c5c801;
+    background-color: rgb(189, 189, 189);
     border-top-left-radius: 48px;
     border-bottom-left-radius: 48px;
-    height: 120px;
+    height: 72px;
     width: 190px;
     cursor: pointer;
     transition:  width 0.3s ease-in-out; // Füge width zur Transition hinzu
@@ -13,11 +13,15 @@
     }
 
     img {
-        width: 96px;;
+        width: 64px;
     }
     span {
         font-size: 18px;
         margin-left: 24px;
     }
+}
+
+.player-active {
+    background-color: orange;
 }
 
