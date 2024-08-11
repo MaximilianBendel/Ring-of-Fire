@@ -9,9 +9,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogAppPlayerComponent } from '../dialog-app-player/dialog-app-player.component';
 import { GameInfoComponent } from '../game-info/game-info.component';
 
-
-
-
 @Component({
   selector: 'app-game',
   standalone: true,
@@ -32,8 +29,7 @@ export class GameComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogAppPlayerComponent);
 
     dialogRef.afterClosed().subscribe((name: string) => {
-      console.log('The dialog was closed', name);
-      if (name.length >= 1) {
+      if (name && name.length >= 1) {
         this.game.players.push(name);
       }
     });

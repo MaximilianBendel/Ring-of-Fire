@@ -10,8 +10,6 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class GameInfoComponent {
 
-  @Input() card: string = '';
-
   cardAction = [
     { title: 'Waterfall', description: 'Everyone has to start drinking at the same time. As soon as player 1 stops drinking, player 2 may stop drinking. Player 3 may stop as soon as player 2 stops drinking, and so on.' },
     { title: 'You', description: 'You decide who drinks' },
@@ -28,6 +26,8 @@ export class GameInfoComponent {
     { title: 'Rule', description: 'Make a rule. Everyone needs to drink when he breaks the rule.' },
   ];
 
+  @Input() card: string = '';
+
   title: string = '';
   description: string = '';
 
@@ -37,6 +37,9 @@ export class GameInfoComponent {
       let cardNumber = +this.card.split('_')[1];
       this.title = this.cardAction[cardNumber - 1].title;
       this.description = this.cardAction[cardNumber - 1].description;
+    } else {
+      this.title = 'Ziehe eine Karte'
+      this.description = 'Und lass dich überraschen'
     }
   }
 }
